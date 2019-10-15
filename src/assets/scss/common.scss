@@ -1,0 +1,83 @@
+$c333:#333;
+$mainColor:#ff9933;
+$c666:#666;
+$c999:#999;
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: '';
+    visibility:hidden;
+    height: 0;
+  }
+.clearfix {
+    zoom: 1;
+  }
+
+
+.c333 {
+    color: #333;
+}
+
+.c666 {
+    color: #666;
+}
+
+.c999 {
+    color: #999;
+}
+
+.f14 {
+    font-size: 14px;
+}
+
+.f13 {
+    font-size: 13px;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.el-submenu [class^=el-icon-] {
+    margin-right: 6px;
+}
+
+.separator {
+    margin-bottom: 30px;
+}
+
+.img-responsive {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.box-sizing {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.page-block {
+    margin-top: 10px;
+}
+body .el-table th.gutter{
+    display: table-cell!important;
+}
+ 
+body .el-table colgroup.gutter{
+    display: table-cell!important;
+}

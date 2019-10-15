@@ -1,0 +1,46 @@
+<div class="login">
+    <div class="wrap">
+        <div class="box">
+            <div class="title">{{$t('login.welcome')}}
+                <p class="system">{{$t('login.platform')}}</p>
+            </div>
+            <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="form login-form" auto-complete="on" label-position="left">
+                <el-form-item prop="accountId" class="form-item">
+                    <el-input
+                     class="form-input form-input1"
+                      ref="accountId"
+                      v-model="loginForm.accountId"
+                      :placeholder="$t('login.inputAccount')"
+                      name="accountId"
+                      type="text"
+                      tabindex="1"
+                      auto-complete="on"
+                    />
+                  </el-form-item>
+
+                  <el-form-item prop="passWord" class="form-item">
+                    <el-input
+                      class="form-input form-input2"
+                      :key="passwordType"
+                      ref="passWord"
+                      v-model="loginForm.passWord"
+                      :type="passwordType"
+                      :placeholder="$t('login.inputPSW')"
+                      name="passWord"
+                      tabindex="2"
+                      auto-complete="on"
+                      @keyup.native="checkCapslock"
+                      @blur="capsTooltip = false"
+                    />
+                  </el-form-item>
+                  <!-- <button class="button"  @click="login" id="TencentCaptcha" type="button" :loading="loading">{{$t('login.login')}}</button> -->
+                  <el-button  class="button"  type="primary" id="TencentCaptcha" :loading="loading" @click.native.prevent="login">{{$t('login.login')}}</el-button>
+                  <div class="lgcont">
+                      <img src="../../../static/images/lg.png" alt="">
+                      <img src="../../../static/images/lgp.png" alt="" style="margin-left: 20px;">
+                  </div>
+            </el-form>
+        </div>
+    </div>
+</div>
+</div>

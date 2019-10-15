@@ -1,0 +1,41 @@
+{
+    "root": true,
+    "extends": "standard",
+    "plugins": [
+        "html",
+        "standard",
+        "promise"
+    ],
+    "rules": {
+        // 会被自动修改配置：
+
+        // 默认会添加函数括号左右空格
+
+        // 使用4格缩进
+        "indent": ["error", 4],
+        // 使用单引号
+        "quotes": ["error", "single"],
+        // 使用绝等于
+        "eqeqeq": "error",
+        // 句末添加分号
+        "semi": [2, "always"],
+
+        "no-console": 1,
+
+        // 不会被自动修改配置：
+
+        // 禁止在代码行后使用内联注释
+        "no-inline-comments": "error",
+        // 可以使用let v1,v2,v3连续(1不可以)
+        "one-var": 0
+    },
+    "globals": {
+        "__DEV__": true,
+        "location": true,
+        "WebSocket": true,
+        "Stomp": true,
+        "SockJS": true,
+        "sessionStorage": true,
+        "localStorage": true
+    }
+}

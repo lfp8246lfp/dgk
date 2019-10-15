@@ -1,0 +1,60 @@
+<div>
+    <breadcrumb></breadcrumb>
+    <el-form :inline="true" :model="form" class="demo-form-inline" ref="form">
+        <el-form-item label="用户名" prop="channelName">
+            <el-input v-model="form.channelName" placeholder="请输入"></el-input>
+        </el-form-item>
+        <el-form-item>
+            <el-button type="primary" icon="el-icon-search" @click="onSubmit">查询</el-button>
+            <el-button icon="el-icon-plus" @click="handleEdit">新增</el-button>
+        </el-form-item>
+    </el-form>
+    <template>
+        <el-table :data="tableData" stripe fit style="width: 100%">
+            <el-table-column prop="username" label="用户名" align="center">
+            </el-table-column>
+            <el-table-column label="角色类型" align="center">
+                <template slot-scope="scope">
+                    {{scope.row.role | constantsFilterArr(roleTypeDict)}}
+                </template>
+            </el-table-column>
+            <el-table-column label="创建时间" align="center">
+                <template slot-scope="scope">
+                    {{scope.row.createDate | longTimeToDefaultFormatDate}}
+                </template>
+            </el-table-column>
+            <el-table-column label="操作" align="center">
+                <template slot-scope="scope">
+                    <el-button @click="handleEdit(scope.row)" type="text">修改</el-button>
+                    <el-button @click="handleDelete(scope.row.id)" type="text">删除</el-button>
+                </template>
+            </el-table-column>
+        </el-table>
+    </template>
+    <div class="page-block">
+        <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="page.pageIndex"
+            :page-sizes="[10, 20, 30]" :page-size="page.pageSize" layout="total, sizes,  prev, pager, next, jumper"
+            :total="total">
+        </el-pagination>
+    </div>
+    <el-dialog :title="dialogTitle" :visible.sync="dialogFormVisible" @close="resetDialogForm">
+        <el-row>
+            <el-col :span="20">
+                <el-form :model="dialogForm" label-width="120px" :rules="rules" ref="dialogForm">
+                    <el-form-item label="用户名称" prop="username">
+                        <el-input v-model="dialogForm.username" placeholder="请输入"></el-input>
+                    </el-form-item>
+                    <el-form-item label="角色类型" prop="roleType">
+                        <el-select v-model.trim="dialogForm.role" placeholder="请选择" style="width: 100%;">
+                            <el-option v-for="item in roleTypeDict" :value="item.code" :key="item.id" :label="item.label"></el-option>
+                        </el-select>
+                    </el-form-item>
+                </el-form>
+            </el-col>
+        </el-row>
+        <div slot="footer" class="dialog-footer">
+            <el-button @click="resetDialogForm">取 消</el-button>
+            <el-button type="primary" @click="handleSubmitDialog">确 定</el-button>
+        </div>
+    </el-dialog>
+</div>

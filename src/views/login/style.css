@@ -1,0 +1,173 @@
+.login {
+    min-width: 1280px;
+    overflow: auto;
+    height: 100vh;
+    background: linear-gradient(rgb(20,66,149), rgb(27,118,202));
+    background-size: cover;
+    font-family: Arial;
+}
+.wrap {
+    width: 1780px;
+    height: 806px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    background: url("../../../static/images//loginbg.png") no-repeat center center;
+}
+.box{
+    width: 490px;
+    float: right;
+    padding: 80px 0 0 0;
+    margin-right: 80px;
+}
+.title {
+    font-size: 28px;
+    line-height: 2;
+    color: black;
+    font-weight: bold;
+}
+
+.system {
+    font-weight: normal;
+}
+
+.form {
+    width: 480px;
+}
+
+.form-item {
+    padding-top: 22px;
+    
+}
+
+.form-input span{
+    width: 118px;
+    display: inline-block;
+    height: 50px;
+    border: 1px solid #cccccc;
+    float: right;
+}
+.form input {
+    width: 454px;
+    height: 50px;
+    font-size: 16px;
+    padding-left: 24px;
+    border: 1px solid #cccccc;
+    font-family: PingFangSC, Arial;
+    display: inline-block;
+}
+.form input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #666666 !important; 
+}  
+.form   input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */  
+    color: #666666 !important;  
+} 
+.form   input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+    color: #666666 !important; 
+}  
+.form  input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+    color: #666666 !important; 
+} 
+
+.error {
+    color: #ff6740;
+    text-indent: 26px;
+    font-size: 12px;
+    padding-top: 10px;
+    height: 27px;
+}
+.button {
+    width: 480px;
+    height: 50px;
+    margin-top: 140px;
+    background-color: rgb(25, 108, 192);
+    font-family: PingFangSC, Arial;
+    font-size: 18px;
+    outline:none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.lgcont{
+    margin-top: 84px;
+    text-align: center;
+}
+.lgcont img{
+    display:inline-block;
+    vertical-align: middle;
+}
+.ui-checkbox {
+    cursor: pointer;
+    user-select: none;
+}
+
+.ui-checkbox input {
+    display: none;
+}
+
+.ui-checkbox input:checked+.ui-checkbox-box {
+    border: 1px solid #fff;
+}
+
+.ui-checkbox .ui-checkbox-label,
+.ui-checkbox .ui-checkbox-box {
+    cursor: pointer;
+}
+
+.ui-checkbox .ui-checkbox-box {
+    border: 1px solid #fff;
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    border-radius: 2.4px;
+    line-height: 1;
+    position: relative;
+    box-sizing: border-box;
+    margin-left: 6px;
+    vertical-align: top;
+    margin-top: 3px;
+}
+
+.ui-checkbox input:checked+.ui-checkbox-box .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+}
+
+.ui-checkbox .checkbox-label {
+    vertical-align: top;
+    color: #fff;
+    font-family: PingFangSC, Arial;
+    font-size: 14px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-left: 3px;
+}
+
+.ui-checkbox input:checked+.ui-checkbox-box:after {
+    content: '';
+    display: inline-block;
+    height: 7px;
+    width: 4px;
+    border: solid 0.6px #fff;
+    border-left: 0;
+    border-top: 0;
+    transform: rotate(51deg) scale(1);
+    transition: all 2s cubic-bezier(0.71, -0.46, 0.88, 0.6);
+    margin-left: 3px;
+    margin-top: 0px;
+    position: absolute;
+    top: 0px;
+}
+
+.form-input /deep/ .el-input__inner {
+    height: 50px!important;
+    line-height: 50px!important;
+}
+.el-form-item  {
+    margin-bottom: 0;
+}
